@@ -10,9 +10,7 @@ import UIKit
 
 class StarViewController: UIViewController {
 
-    
-    
-    
+    var isBlueStar: Bool?
     
     
     
