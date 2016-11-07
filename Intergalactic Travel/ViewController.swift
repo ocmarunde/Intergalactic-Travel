@@ -10,18 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let nextViewController = segue.destination as! StarViewController
         let button = sender as! UIButton
         nextViewController.title = button.currentTitle
+        if segue.identifier == "blueStarSegue"
+        {
+            nextViewController.isBlueStar = true
+        }
+        else
+        {
+            nextViewController.isBlueStar = false
+        }
     }
 }
 

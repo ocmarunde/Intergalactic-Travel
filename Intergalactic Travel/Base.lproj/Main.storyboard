@@ -20,31 +20,35 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnI-sy-Urt">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="J3X-ax-ped"/>
-                                    <constraint firstAttribute="width" constant="115" id="mY8-VQ-zhs"/>
+                                    <constraint firstAttribute="height" constant="75" id="J3X-ax-ped"/>
+                                    <constraint firstAttribute="width" constant="150" id="mY8-VQ-zhs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Red Dwarf"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Red Dwarf" backgroundImage="redbutton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="ZME-zI-igS" kind="show" identifier="blueStarSegue" id="KLC-zh-7E1"/>
+                                    <segue destination="ZME-zI-igS" kind="show" identifier="redDwarfSegue" id="KLC-zh-7E1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wek-FA-flC">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8lU-Uk-81M"/>
-                                    <constraint firstAttribute="width" constant="115" id="t0S-f6-Llx"/>
+                                    <constraint firstAttribute="height" constant="75" id="8lU-Uk-81M"/>
+                                    <constraint firstAttribute="width" constant="150" id="t0S-f6-Llx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Blue Star"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Blue Star" backgroundImage="bluebutton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="ZME-zI-igS" kind="show" identifier="redDwarfSegue" id="drF-PX-HU4"/>
+                                    <segue destination="ZME-zI-igS" kind="show" identifier="blueStarSegue" id="drF-PX-HU4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FnI-sy-Urt" firstAttribute="top" secondItem="Wek-FA-flC" secondAttribute="bottom" constant="-362" id="3oq-LM-GIH"/>
-                            <constraint firstItem="Wek-FA-flC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="523" id="DUX-iQ-4ZC"/>
+                            <constraint firstItem="FnI-sy-Urt" firstAttribute="top" secondItem="Wek-FA-flC" secondAttribute="bottom" constant="-386" id="3oq-LM-GIH"/>
+                            <constraint firstItem="Wek-FA-flC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="519" id="DUX-iQ-4ZC"/>
                             <constraint firstItem="Wek-FA-flC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="apB-wl-8VT"/>
                             <constraint firstItem="FnI-sy-Urt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pRk-Nc-qN4"/>
                         </constraints>
@@ -66,12 +70,24 @@
                     <view key="view" contentMode="scaleToFill" id="Cse-qX-bHl">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-2m-oiP"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p1k-h8-7lG" firstAttribute="top" secondItem="7cC-2m-oiP" secondAttribute="bottom" id="Ny1-yq-rWV"/>
+                            <constraint firstItem="7cC-2m-oiP" firstAttribute="leading" secondItem="Cse-qX-bHl" secondAttribute="leading" id="eaC-ZD-JAN"/>
+                            <constraint firstItem="7cC-2m-oiP" firstAttribute="top" secondItem="Hq7-yJ-7KE" secondAttribute="bottom" id="kF6-pb-xeB"/>
+                            <constraint firstAttribute="trailing" secondItem="7cC-2m-oiP" secondAttribute="trailing" id="pHD-J9-bWE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="starImageView" destination="7cC-2m-oiP" id="zsP-IX-DeN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36g-Gs-tXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="-515"/>
+            <point key="canvasLocation" x="1700" y="-515.0390625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fTk-XM-xgd">
@@ -92,7 +108,11 @@
             <point key="canvasLocation" x="250" y="-515.0390625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bluebutton" width="600" height="192"/>
+        <image name="redbutton" width="600" height="192"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KLC-zh-7E1"/>
+        <segue reference="drF-PX-HU4"/>
     </inferredMetricsTieBreakers>
 </document>
